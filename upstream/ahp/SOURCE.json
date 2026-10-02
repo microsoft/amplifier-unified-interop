@@ -1,0 +1,14 @@
+{
+  "repository": "microsoft/agent-host-protocol",
+  "sha": "9f940395ce287572d1f0ab72b9a195545b1ef998",
+  "date": "2026-10-01T17:13:32Z",
+  "usage": "Unmodified upstream schemas for independent compatibility validation, not production protocol definitions.",
+  "files": {
+    "notifications.schema.json": "3d6a19c7639c772d18f317292b56d8388bf6f5744c07d12ba64dca8796e88bd4",
+    "state.schema.json": "229b714f9099a3ed2960a61e30a75f3b0e177e97dba7fb393550b9f275e280c7",
+    "LICENSE": "dea9265341829002e2c23a7372393eb2ed6e26085fb623f38a4ba0af833f30a6",
+    "actions.schema.json": "2b60d12c29386ba99914ce9dac8f0782b38fe45c68b2a0e57ba20d50ba9ad7ec",
+    "errors.schema.json": "041ac5262a15c8e138845d5bdc986c0bfa61f73984f6fb2824c4c14947a6c3b9",
+    "commands.schema.json": "80f04335981038c8100eba6d15db7903d4d30dcf2edf0e07681d654fab99ac27"
+  }
+}
