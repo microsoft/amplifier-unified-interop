@@ -19,7 +19,7 @@ try{
  const seeded=spawnSync(python,['-I',fixture('working-set-catalog.py'),directory],{encoding:'utf8'});assert.equal(seeded.status,0,seeded.stderr);
  const gates=join(directory,'gates'),log=join(directory,'agent.jsonl');await mkdir(gates);
  const audit=async()=>{try{return (await readFile(log,'utf8')).trim().split('\n').map(JSON.parse);}catch(error){if(error.code==='ENOENT')return [];throw error;}};
- const catalog=new StdioCatalog({command:python,args:['-I',fixture('audited-catalog.py'),'serve','--db',join(directory,'catalog.sqlite'),'--scan-interval','0','--workspace-check-interval','0']});
+ const catalog=new StdioCatalog({command:python,args:['-I',fixture('working-set-catalog-reader.py'),'serve','--db',join(directory,'catalog.sqlite'),'--scan-interval','0','--workspace-check-interval','0']});
  host=await createHost({stateDirectory:join(directory,'host'),allowedWorkspaceRoots:[join(directory,'workspace')],catalog,port:0,maxClients:40,maxActiveAgents:8,maxPeerBufferedBytes:2*1024*1024,replayLimit:64,idleAgentMs:60000,engines:[{id:'fixture',command:process.execPath,args:[fixture('working-set-agent.mjs')],env:{FIXTURE_LOG:log,FIXTURE_GATES:gates}}]});
  const stage=name=>console.error('Acceptance stage:',name);stage('metadata');
  const open=async()=>{const peer=await Peer.open(host.url);peers.push(peer);await peer.request('initialize',{channel:root,clientId:randomUUID(),protocolVersions:['0.9.0'],initialSubscriptions:[root]});return peer;};

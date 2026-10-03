@@ -14,7 +14,7 @@ const directory=await mkdtemp(join(tmpdir(),'unified-cold-native-'));let host,pe
 try{
  const seeded=spawnSync(catalogPython,['-I',fixture('cold-native-history.py'),'seed',directory],{encoding:'utf8'});assert.equal(seeded.status,0,seeded.stderr);const seed=JSON.parse(seeded.stdout);
  const log=join(directory,'native-io.jsonl'),audit=async()=>{try{return (await readFile(log,'utf8')).trim().split('\n').map(JSON.parse);}catch(error){if(error.code==='ENOENT')return [];throw error;}};
- const catalog=new StdioCatalog({command:catalogPython,args:['-I',fixture('audited-catalog.py'),'serve','--db',join(directory,'catalog.sqlite'),'--scan-interval','0','--workspace-check-interval','0']});
+ const catalog=new StdioCatalog({command:catalogPython,args:['-I',fixture('working-set-catalog-reader.py'),'serve','--db',join(directory,'catalog.sqlite'),'--scan-interval','0','--workspace-check-interval','0']});
  host=await createHost({stateDirectory:join(directory,'host'),allowedWorkspaceRoots:[seed.workspace],catalog,port:0,engines:[{id:'amplifier',command:nativePython,args:['-I',fixture('cold-native-history.py'),'audit','amplifier-acp','--config',seed.config],env:{NATIVE_IO_LOG:log}}]});
  peer=await Peer.open(host.url);await peer.request('initialize',{channel:'ahp-root://',clientId:randomUUID(),protocolVersions:['0.9.0'],initialSubscriptions:['ahp-root://']});
  const roots=await peer.request('listSessions',{channel:'ahp-root://',limit:50});assert.equal(roots.items.length,1);assert.equal(roots.items[0].resource,seed.session);
