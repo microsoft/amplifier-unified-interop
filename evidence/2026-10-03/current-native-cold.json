@@ -1,0 +1,56 @@
+{
+  "scope": "Installed native ACP passive reader over 10,000 canonical historical turns and 700 indexed delegated children. Worker launch is rejected by an independent audit hook and impossible workerCommand; no models/accounts.",
+  "nativeRevision": "f530e541d6e6a32f250c76dc16ef40c6eaec6564",
+  "hostRevision": "30f5129491376a34e8f5fda82f03f012210b8fa3",
+  "transcriptBytes": 6936670,
+  "selectedTurns": 50,
+  "transcriptBytesRead": 131072,
+  "transcriptOpens": 1,
+  "nativeProcesses": 1,
+  "executionAgents": 0,
+  "children": 700,
+  "childPages": 28,
+  "childPageLimit": 25,
+  "unrelatedMetadataNativeReads": 0,
+  "eventLogReads": 0,
+  "historyHashesPreserved": true,
+  "diagnostics": {
+    "steeringDispositionPending": 0,
+    "turnSettledPending": 0,
+    "turnSettledFailures": 0,
+    "turnSettledDropped": 0,
+    "agentStoppedPending": 0,
+    "agentStoppedFailures": 0,
+    "clients": 1,
+    "activeAgents": 0,
+    "startingAgents": 0,
+    "subscriptions": 2,
+    "serverSeq": 1,
+    "workingSet": {
+      "hotRecords": 0,
+      "passiveReads": 0,
+      "selectedNativeWindows": 0,
+      "selectedNativeTurnIds": 0,
+      "selectedHostWindows": 0,
+      "cursors": {
+        "turns": 0,
+        "native": 1,
+        "mixed": 1,
+        "prefix": 0,
+        "recall": 0,
+        "coordination": 0
+      },
+      "peerBufferedBytes": 0,
+      "handshakeQueuedEvents": 0,
+      "handshakeQueuedBytes": 0
+    },
+    "retainedReplay": {
+      "events": 1,
+      "bytes": 105
+    },
+    "pendingQueue": {
+      "messages": 0,
+      "bytes": 0
+    }
+  }
+}

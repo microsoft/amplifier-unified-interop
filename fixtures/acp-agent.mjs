@@ -13,8 +13,8 @@ createInterface({input:process.stdin}).on('line',async line=>{
  const message=JSON.parse(line);
  if(!message.method){permissions.get(message.id)?.(message.result);permissions.delete(message.id);return;}
  const {method,params={},id}=message;
- if(method==='initialize')return reply(id,{protocolVersion:1,agentInfo:{name:'independent-fixture',version:'1'},agentCapabilities:{loadSession:true,sessionCapabilities:{resume:{},close:{}}},authMethods:[]});
- if(method==='session/new')return reply(id,{sessionId:randomUUID(),configOptions:[]});
+ if(method==='initialize')return reply(id,{protocolVersion:1,agentInfo:{name:process.env.FIXTURE_IDENTITY??'independent-fixture',version:'1'},agentCapabilities:{loadSession:true,sessionCapabilities:{resume:{},close:{}}},authMethods:[]});
+ if(method==='session/new'){const sessionId=randomUUID();log({method,sessionId,identity:process.env.FIXTURE_IDENTITY??'independent-fixture'});return reply(id,{sessionId,configOptions:[]});}
  if(method==='session/resume'||method==='session/load'){log({method,sessionId:params.sessionId});return reply(id,{configOptions:[]});}
  if(method==='session/close')return reply(id,{});
  if(method==='session/cancel'){prompts.get(params.sessionId)?.();return;}

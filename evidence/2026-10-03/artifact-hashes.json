@@ -1,0 +1,26 @@
+{
+  "github-copilot-1.0.91.tgz": {
+    "sha256": "4f305d718a1e6cb994e926d0f570883eb63bfb79ef091d00d5ff9c67d9d83781",
+    "bytes": 5452
+  },
+  "amplifier-unified-host-0.1.0.tgz": {
+    "sha256": "2e817365c6d7af64a360cb6981000bbca225372859c29cdde32330558d400ab4",
+    "bytes": 197204
+  },
+  "agentclientprotocol-claude-agent-acp-0.85.1.tgz": {
+    "sha256": "d978cbaa5a97ef5e70b5f7b303089f5289fa54f84b7ff2685b84436378566d3a",
+    "bytes": 330636
+  },
+  "amplifier_session_catalog-0.1.0-py3-none-any.whl": {
+    "sha256": "fea75b133f2b0f3d32cf7a19e507c1fb483ec18c678a7e1eb992c37800468193",
+    "bytes": 24804
+  },
+  "agentclientprotocol-codex-acp-2.1.1.tgz": {
+    "sha256": "9da0d580518d006d257609a4b64b7c5bd96a7f36f2d86db5c8f2cb9385de5872",
+    "bytes": 271177
+  },
+  "microsoft-agent-host-protocol-1.0.0.tgz": {
+    "sha256": "b565f4f3846e0c2bb59e269f165cb10ee9bd25cce345444a864f96bd1c46c86a",
+    "bytes": 392546
+  }
+}

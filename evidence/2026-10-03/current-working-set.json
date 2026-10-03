@@ -1,0 +1,109 @@
+{
+  "scope": "Independent installed host/catalog, 32 actual WebSocket peers, 8 ACP fixture processes; generated native extension history/worker index, no model calls.",
+  "checks": {
+    "unrelatedMetadata": {
+      "clients": 32,
+      "rootPage": 50,
+      "childSessionsHidden": true,
+      "agentProcesses": 0,
+      "historyRequests": 0
+    },
+    "pendingIntents": {
+      "acceptedLimit": 50,
+      "overLimit": "refused",
+      "removedBeforeExecution": 50
+    },
+    "actualSlowSocket": {
+      "closedCode": 1013,
+      "healthyCompleteBytes": 7864320,
+      "uninterestedClients": 30,
+      "uninterestedChatEvents": 0,
+      "retainedReplay": {
+        "events": 64,
+        "bytes": 2045507
+      },
+      "bufferedBytesAfterStream": 2114164
+    },
+    "noChatViewers": {
+      "completedTurns": 7,
+      "hotRecordsAfterSettlement": 0,
+      "exactTotalPrompts": 8
+    },
+    "recovery": {
+      "expiredReplay": "snapshot",
+      "recentReplay": "replay",
+      "promptsReplayed": 0
+    },
+    "selectedColdHistory": {
+      "initialTurns": 50,
+      "initialNativeLimit": 100,
+      "pagedTurns": 100,
+      "smallerSharedView": 100,
+      "freshAfterLastDetach": 5,
+      "omittedViewTurns": 1500,
+      "uniqueRetainedTurns": 1500,
+      "releasedWindowTurnIds": 0,
+      "workerPages": 7,
+      "children": 700,
+      "childPageLimit": 100,
+      "nativeRuntimeMounts": 0,
+      "unrelatedMetadataHistoryReads": 0
+    },
+    "cursorEviction": {
+      "requests": 4101,
+      "retained": 4096,
+      "expired": "explicitly refused",
+      "extraPrompts": 1
+    },
+    "zeroViewers": {
+      "clientsDuringExecution": 0,
+      "subscriptionsDuringExecution": 0,
+      "completed": true,
+      "reconnectShowsResult": true,
+      "promptCalls": 1
+    }
+  },
+  "diagnostics": {
+    "steeringDispositionPending": 0,
+    "turnSettledPending": 0,
+    "turnSettledFailures": 0,
+    "turnSettledDropped": 0,
+    "agentStoppedPending": 0,
+    "agentStoppedFailures": 0,
+    "clients": 1,
+    "activeAgents": 8,
+    "startingAgents": 0,
+    "subscriptions": 2,
+    "serverSeq": 465,
+    "workingSet": {
+      "hotRecords": 0,
+      "passiveReads": 0,
+      "selectedNativeWindows": 0,
+      "selectedNativeTurnIds": 0,
+      "selectedHostWindows": 1,
+      "cursors": {
+        "turns": 4096,
+        "native": 4,
+        "mixed": 4,
+        "prefix": 0,
+        "recall": 0,
+        "coordination": 0
+      },
+      "peerBufferedBytes": 0,
+      "handshakeQueuedEvents": 0,
+      "handshakeQueuedBytes": 0
+    },
+    "retainedReplay": {
+      "events": 64,
+      "bytes": 1448204
+    },
+    "pendingQueue": {
+      "messages": 0,
+      "bytes": 0
+    }
+  },
+  "hostArchiveSha256": "2e817365c6d7af64a360cb6981000bbca225372859c29cdde32330558d400ab4",
+  "hostRevision": "30f5129491376a34e8f5fda82f03f012210b8fa3",
+  "catalogRevision": "36fe815b5cf95b92e4a17b6ed7e540b8eab874ff",
+  "node": "v25.2.1"
+}

@@ -101,3 +101,91 @@ The generic RPC test pipelines a long capability wait behind initialization, the
 issues same-client controls, exact receipt checks and independent reads while it
 is still waiting. It verifies the handshake barrier, one-effect duplicate admission,
 and sub-two-second control completion without operation-specific dispatch rules.
+
+## Current public peers and creation/recovery swaps
+
+The [2026-10-03 receipt](evidence/2026-10-03/qualification.json) qualifies sealed
+installed host `30f51294`, catalog `36fe815b` and native passive reader `f530e541`.
+Eight harness checks passed without skips. Separate scale/working-set/cold-reader
+receipts retain their exact scenarios; these counts are not an assembled product pass.
+
+`substitution-recovery.test.mjs` launches the public host executable with two ACP
+fixture identities. Creation selects the agent, replacement clients retain its
+identity and history, expired replay returns snapshots, lost local baselines
+initialize afresh, and process replacement restores passive persisted projections.
+Exactly one fixture prompt runs; no recovered work is replayed. Switching engines
+means creating another session, never converting an existing conversation.
+
+`official-client.test.mjs` uses the current published **AHP client 1.0.0**, its
+public WebSocket transport and upstream reducers. It offers upstream's supported
+versions `[1.0.0, 0.9.0]`, negotiates **0.9.0**, streams a completed turn, compares
+the reduced result with an independent viewer, reconnects and restores a lost
+baseline. New 1.0-only features are unqualified. The unchanged vendored schemas
+still validate the negotiated 0.9 baseline; latest upstream main is recorded
+separately instead of silently replacing the host's negotiated contract.
+
+```sh
+OFFICIAL_AHP_PACKAGE=/owned/consumer/node_modules/@microsoft/agent-host-protocol \
+UNIFIED_HOST_MODULE=/owned/consumer/node_modules/@amplifier/unified-host/dist/index.js \
+UNIFIED_HOST_COMMAND='["/owned/consumer/node_modules/.bin/amplifier-unified-host"]' \
+  npm test
+```
+
+The [vendor matrix](evidence/2026-10-03/qualification.json) uses public npm stable
+artifacts, not the configured mirror's older previews:
+
+| Adapter | Package | Independent ACP + host creation | Fresh host account turn |
+| --- | --- | --- | --- |
+| Codex | `@agentclientprotocol/codex-acp` 2.1.1 | Passed with isolated copied login | Passed: discovered `gpt-6-luna`, exact unique token, zero tools |
+| Claude | `@agentclientprotocol/claude-agent-acp` 0.85.1 | Passed; model controls exposed | Authentication required; unknown receipt retained, no retry |
+| Copilot | `@github/copilot` 1.0.91 | Passed with explicitly supplied credential | Passed: discovered `gpt-5-mini`, exact unique token, zero tools |
+
+Unauthenticated discovery is a separate receipt: Codex requires authentication
+during initialization; Copilot initializes but refuses session creation; Claude
+creates sessions and advertises models but this does not establish inference access.
+The earlier Claude account success does not qualify this newer isolated package.
+Copilot's platform package and Codex's bundled binary dependency versions/file
+hashes are retained in the owner output closure manifest.
+
+### Repeatable vendor runner
+
+`node test/vendor-qualification.mjs /owned/private-config.json /owned/new-receipt.json`
+starts actual published adapters using an independent ACP SDK 1.7.0 client, then
+the installed public host. The config's `adapters` array contains `id`, `package`
+(name/version), absolute `command`, argv `args`, sealed `artifact`, and a unique
+`stateDirectory`. Optional `env`/allowlisted `credentialEnvironment` supply
+explicit account access; config values are never included in receipts. Keep that
+private config out of version control. State roots remain inside each owned home.
+
+For example, a credential-free discovery config is:
+
+```json
+{"adapters":[{
+  "id":"copilot",
+  "package":{"name":"@github/copilot","version":"1.0.91"},
+  "command":"/owned/vendors/node_modules/.bin/copilot",
+  "args":["--acp","--stdio"],
+  "artifact":"/owned/github-copilot-1.0.91.tgz",
+  "stateDirectory":"/owned/new-copilot-probe"
+}]}
+```
+
+No prompt runs by default. An explicitly supplied `prompt` (at most 500 characters)
+enables one new host turn. Optional `model` is `{configId,value}` and must be
+present in **that new session's** advertised schema. `expectedText` checks the
+exact bounded response. A model catalog is not an entitlement check; OpenAI's
+[app-server documentation](https://developers.openai.com/siwc/token-sharing-open-source/codex-app-server)
+also distinguishes model discovery from successful inference.
+
+Before dispatch, the runner persists an unknown receipt. It never retries, rejects
+receipt overwrites/reused state, refuses direct-client filesystem/terminal effects,
+and approves no host tool permission. Inspect `qualified`, terminal state and the
+original host receipt: runner exit status alone is not a vendor pass. Preserve
+unknown state for inspection and remove copied credentials separately afterward.
+This is not a live-account authentication manager or a history migration tool.
+
+Upstream adapter entry points: [Codex ACP](https://github.com/agentclientprotocol/codex-acp),
+[Claude ACP](https://github.com/agentclientprotocol/claude-agent-acp), and
+[Copilot ACP](https://docs.github.com/en/copilot/reference/copilot-cli-reference/acp-server).
+No private host imports, browser latency, physical-device acceptance or live
+Spark adoption are claimed. Public contract delta: none.
