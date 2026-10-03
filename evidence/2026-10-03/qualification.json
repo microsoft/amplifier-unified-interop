@@ -1,0 +1,469 @@
+{
+  "baseline": "218e8d79b32a645589063e34bf86128453acb95c",
+  "hostRevision": "30f5129491376a34e8f5fda82f03f012210b8fa3",
+  "catalogRevision": "36fe815b5cf95b92e4a17b6ed7e540b8eab874ff",
+  "nativeRevision": "f530e541d6e6a32f250c76dc16ef40c6eaec6564",
+  "node": "v25.2.1",
+  "catalogPython": "3.14.6",
+  "nativePython": "3.13",
+  "tests": {
+    "passed": 8,
+    "skipped": 0,
+    "failed": 0
+  },
+  "contracts": {
+    "clauses": [
+      "CB1",
+      "CB4",
+      "CB6",
+      "HP1",
+      "HP3",
+      "HP4",
+      "HP6",
+      "AP1",
+      "AP3",
+      "AP4",
+      "WS2",
+      "WS3",
+      "WS4",
+      "WS5"
+    ],
+    "publicContractDelta": "none"
+  },
+  "upstream": {
+    "ahpMainObserved": "ea432973fcd4fa30d393fa98b7507c658e970802",
+    "schemaBaseline": "9f940395ce287572d1f0ab72b9a195545b1ef998",
+    "officialAHPClientPackage": "1.0.0",
+    "offered": [
+      "1.0.0",
+      "0.9.0"
+    ],
+    "negotiated": "0.9.0",
+    "ACPConsumerSDK": "1.7.0",
+    "hostACPDependency": "1.5.0"
+  },
+  "vendors": [
+    {
+      "adapter": "codex",
+      "package": {
+        "name": "@agentclientprotocol/codex-acp",
+        "version": "2.1.1"
+      },
+      "artifactSha256": "9da0d580518d006d257609a4b64b7c5bd96a7f36f2d86db5c8f2cb9385de5872",
+      "directInitialize": "initialized",
+      "directSession": "created",
+      "hostSession": "created",
+      "modelIds": [
+        {
+          "value": "gpt-6.1-sol",
+          "name": "6.1 Sol",
+          "description": "Latest workhorse model for coding and everyday work."
+        },
+        {
+          "value": "gpt-6-astra",
+          "name": "6 Astra",
+          "description": "Frontier intelligence for the most demanding work."
+        },
+        {
+          "value": "gpt-6-sol",
+          "name": "6 Sol",
+          "description": "Previous generation workhorse model."
+        },
+        {
+          "value": "gpt-6-luna",
+          "name": "6 Luna",
+          "description": "Fast and affordable model for easier tasks."
+        },
+        {
+          "value": "gpt-5.6-sol",
+          "name": "5.6 Sol",
+          "description": "Older generation workhorse model."
+        },
+        {
+          "value": "gpt-5.6-terra",
+          "name": "5.6 Terra",
+          "description": "Older balanced model for straightforward work."
+        },
+        {
+          "value": "gpt-5.6-luna",
+          "name": "5.6 Luna",
+          "description": "Older fast and efficient model."
+        },
+        {
+          "value": "gpt-5.5",
+          "name": "5.5",
+          "description": "Legacy coding model."
+        }
+      ],
+      "selectedModel": {
+        "configId": "model",
+        "value": "gpt-6-luna"
+      },
+      "accountTurn": "completed",
+      "turnId": "248ff415-7de1-4bd0-8afd-bb74069256a7",
+      "dispatches": 1,
+      "toolCalls": 0,
+      "exactExpectedToken": true,
+      "qualified": true,
+      "errorTypes": []
+    },
+    {
+      "adapter": "claude",
+      "package": {
+        "name": "@agentclientprotocol/claude-agent-acp",
+        "version": "0.85.1"
+      },
+      "artifactSha256": "d978cbaa5a97ef5e70b5f7b303089f5289fa54f84b7ff2685b84436378566d3a",
+      "directInitialize": "initialized",
+      "directSession": "created",
+      "hostSession": "created",
+      "modelIds": [
+        {
+          "value": "default",
+          "name": "Default (recommended)",
+          "description": "Opus"
+        },
+        {
+          "value": "opus",
+          "name": "Opus 5.5",
+          "description": "Opus 5.5 \u00b7 Best for everyday, complex tasks \u00b7 $4/$20 per Mtok"
+        },
+        {
+          "value": "claude-fable-5-1",
+          "name": "Fable 5.1",
+          "description": "Fable 5.1 \u00b7 Most capable for your hardest and longest-running tasks \u00b7 $10/$50 per Mtok"
+        },
+        {
+          "value": "sonnet",
+          "name": "Sonnet 5.5",
+          "description": "Sonnet 5.5 \u00b7 Efficient for routine tasks \u00b7 $2/$10 per Mtok"
+        },
+        {
+          "value": "haiku",
+          "name": "Haiku 4.5",
+          "description": "Haiku 4.5 \u00b7 Fastest for quick answers \u00b7 $1/$5 per Mtok"
+        }
+      ],
+      "selectedModel": {
+        "configId": "model",
+        "value": "haiku"
+      },
+      "accountTurn": "unknown",
+      "turnId": "afde1db5-509c-4aa7-a85e-5e1f30cb3200",
+      "dispatches": 1,
+      "toolCalls": 0,
+      "exactExpectedToken": false,
+      "qualified": false,
+      "errorTypes": [
+        "EXECUTION_OUTCOME_UNKNOWN"
+      ]
+    },
+    {
+      "adapter": "copilot",
+      "package": {
+        "name": "@github/copilot",
+        "version": "1.0.91"
+      },
+      "artifactSha256": "4f305d718a1e6cb994e926d0f570883eb63bfb79ef091d00d5ff9c67d9d83781",
+      "directInitialize": "initialized",
+      "directSession": "created",
+      "hostSession": "created",
+      "modelIds": [
+        {
+          "value": "auto",
+          "name": "Auto",
+          "description": "Let Copilot pick the best model",
+          "_meta": null
+        },
+        {
+          "value": "claude-sonnet-5",
+          "name": "Claude Sonnet 5",
+          "description": "Claude Sonnet 5",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        },
+        {
+          "value": "claude-opus-5.5",
+          "name": "Claude Opus 5.5",
+          "description": "Claude Opus 5.5",
+          "_meta": {
+            "copilotUsage": "15x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "high"
+          }
+        },
+        {
+          "value": "claude-opus-5",
+          "name": "Claude Opus 5",
+          "description": "Claude Opus 5",
+          "_meta": {
+            "copilotUsage": "15x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "high"
+          }
+        },
+        {
+          "value": "claude-opus-4.8",
+          "name": "Claude Opus 4.8",
+          "description": "Claude Opus 4.8",
+          "_meta": {
+            "copilotUsage": "15x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "high"
+          }
+        },
+        {
+          "value": "claude-haiku-4.5",
+          "name": "Claude Haiku 4.5",
+          "description": "Claude Haiku 4.5",
+          "_meta": {
+            "copilotUsage": "0.33x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "low"
+          }
+        },
+        {
+          "value": "gpt-6.1-sol",
+          "name": "GPT-6.1 Sol",
+          "description": "GPT-6.1 Sol",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        },
+        {
+          "value": "gpt-6-sol",
+          "name": "GPT-6 Sol",
+          "description": "GPT-6 Sol",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        },
+        {
+          "value": "gpt-6-luna",
+          "name": "GPT-6 Luna",
+          "description": "GPT-6 Luna",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "low"
+          }
+        },
+        {
+          "value": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "description": "GPT-6 Astra",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "very_high"
+          }
+        },
+        {
+          "value": "gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "description": "GPT-5.6 Sol",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "high"
+          }
+        },
+        {
+          "value": "gpt-5.6-sol-fast",
+          "name": "GPT-5.6 Sol Fast (Internal only)",
+          "description": "GPT-5.6 Sol Fast (Internal only)",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "very_high"
+          }
+        },
+        {
+          "value": "gpt-5.6-terra",
+          "name": "GPT-5.6 Terra",
+          "description": "GPT-5.6 Terra",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        },
+        {
+          "value": "gpt-5.6-luna",
+          "name": "GPT-5.6 Luna",
+          "description": "GPT-5.6 Luna",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "low"
+          }
+        },
+        {
+          "value": "gpt-5.5",
+          "name": "GPT-5.5",
+          "description": "GPT-5.5",
+          "_meta": {
+            "copilotUsage": "7.5x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "high"
+          }
+        },
+        {
+          "value": "gpt-5.4",
+          "name": "GPT-5.4",
+          "description": "GPT-5.4",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        },
+        {
+          "value": "gpt-5.4-mini",
+          "name": "GPT-5.4 mini",
+          "description": "GPT-5.4 mini",
+          "_meta": {
+            "copilotUsage": "0.33x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "low"
+          }
+        },
+        {
+          "value": "gpt-5.3-codex",
+          "name": "GPT-5.3-Codex",
+          "description": "GPT-5.3-Codex",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        },
+        {
+          "value": "gpt-5-mini",
+          "name": "GPT-5 mini",
+          "description": "GPT-5 mini",
+          "_meta": {
+            "copilotUsage": "0x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "low"
+          }
+        },
+        {
+          "value": "mai-code-1.1-flash",
+          "name": "MAI-Code-1.1-Flash",
+          "description": "MAI-Code-1.1-Flash",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "low"
+          }
+        },
+        {
+          "value": "gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash",
+          "description": "Gemini 3.8 Flash",
+          "_meta": {
+            "copilotUsage": "14x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "low"
+          }
+        },
+        {
+          "value": "gemini-3.7-flash",
+          "name": "Gemini 3.7 Flash",
+          "description": "Gemini 3.7 Flash",
+          "_meta": {
+            "copilotUsage": "14x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "low"
+          }
+        },
+        {
+          "value": "grok-4.5",
+          "name": "Grok 4.5",
+          "description": "Grok 4.5",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        },
+        {
+          "value": "claude-sonnet-5.5",
+          "name": "Claude Sonnet 5.5",
+          "description": "Claude Sonnet 5.5",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        },
+        {
+          "value": "grok-4.6",
+          "name": "Grok 4.6",
+          "description": "Grok 4.6",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        },
+        {
+          "value": "grok-4.7",
+          "name": "Grok 4.7",
+          "description": "Grok 4.7",
+          "_meta": {
+            "copilotUsage": "1x",
+            "copilotEnablement": "enabled",
+            "copilotPriceCategory": "medium"
+          }
+        }
+      ],
+      "selectedModel": {
+        "configId": "model",
+        "value": "gpt-5-mini"
+      },
+      "accountTurn": "completed",
+      "turnId": "eb8621fb-271f-449d-897e-1cbbe55cf937",
+      "dispatches": 1,
+      "toolCalls": 0,
+      "exactExpectedToken": true,
+      "qualified": true,
+      "errorTypes": []
+    }
+  ],
+  "vendorClosure": {
+    "packages": 125,
+    "manifestSha256": "51f2e620fcb22ec9f46b88d2476626c9467fe9b10b4f22eaf1abaaada4001e65",
+    "lockSha256": "54c2b29c2b81b3894c704b76412c95ea93b3558184d37e9db02aef52eb009fd5",
+    "notableVersions": {
+      "@anthropic-ai/claude-agent-sdk": "0.3.286",
+      "@github/copilot-darwin-arm64": "1.0.91",
+      "@openai/codex": "0.159.3",
+      "@openai/codex-darwin-arm64": "0.159.3-darwin-arm64"
+    }
+  },
+  "registry": {
+    "qualified": "https://registry.npmjs.org",
+    "configuredMirrorCodex": "1.13.2-preview.5",
+    "configuredMirrorClaude": "0.81.3-preview.1",
+    "userRegistryConfigurationChanged": false
+  },
+  "limits": [
+    "No successful current Claude account turn: isolated authentication required; unknown receipt preserved without retry. Earlier Claude account success is separate evidence.",
+    "No browser paint, physical-device, production-host, installed-worker or deployment acceptance.",
+    "Official AHP1.0 client exercised only negotiated0.9 ordinary baseline; new1.0 features unqualified.",
+    "Scale uses warm filesystem and synthetic catalog rows,32 wire clients,8 fixture ACP agents; Node memory includes clients and host,not child processes.",
+    "Creation swap uses two declared independent fixture identities,not cross-engine history conversion. Vendor packages separately qualify real agent substitution.",
+    "Native f530 is shared immutable installed wheel,read-only with no bytecode writes; new histories/state are owned synthetic fixtures.",
+    "No prior failed Codex command replay;each new account turn used unique session/turn/prompt token.",
+    "Vendor runner reports per-stage failure/unknown in receipts;process exit0 alone is not a compatibility pass."
+  ]
+}

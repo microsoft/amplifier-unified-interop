@@ -1,0 +1,204 @@
+{
+  "scope": "Synthetic installed host/catalog with 32 wire clients and 8 independent ACP fixture agents; warm filesystem, fresh host process per catalog size. This developer workstation may run concurrent qualification work. Node memory/CPU includes benchmark clients; subprocess memory, real UI/model, cold native history and slow socket backpressure are separate gates.",
+  "components": {
+    "host": {
+      "revision": "30f5129491376a34e8f5fda82f03f012210b8fa3",
+      "artifactSha256": "2e817365c6d7af64a360cb6981000bbca225372859c29cdde32330558d400ab4"
+    },
+    "catalog": {
+      "revision": "36fe815b5cf95b92e4a17b6ed7e540b8eab874ff"
+    }
+  },
+  "environment": {
+    "node": "v25.2.1",
+    "platform": "darwin",
+    "release": "27.0.0",
+    "cpu": "Apple M4 Max",
+    "logicalCpus": 16,
+    "systemMemoryBytes": 137438953472
+  },
+  "results": [
+    {
+      "indexedSessions": 25000,
+      "indexedWorkspaces": 4000,
+      "presentWorkspaces": 100,
+      "discoverableRoots": 1000,
+      "clients": 32,
+      "activeAgents": 8,
+      "titleActionEcho": {
+        "samples": 160,
+        "p50Ms": 7.209,
+        "p95Ms": 22.674,
+        "p99Ms": 39.36,
+        "maxMs": 45.156
+      },
+      "titleAllFourViewers": {
+        "samples": 160,
+        "p50Ms": 7.756,
+        "p95Ms": 22.745,
+        "p99Ms": 39.443,
+        "maxMs": 45.185
+      },
+      "roundCatalogConvergence": {
+        "samples": 20,
+        "p50Ms": 63.461,
+        "p95Ms": 122.208,
+        "p99Ms": 125.797,
+        "maxMs": 125.797
+      },
+      "convergenceReads": 20,
+      "catalogList50": {
+        "samples": 480,
+        "p50Ms": 28.556,
+        "p95Ms": 52.464,
+        "p99Ms": 60.773,
+        "maxMs": 69.003
+      },
+      "maximumPageBytes": 19877,
+      "harnessAndHostMemory": {
+        "rssBeforeBytes": 131727360,
+        "rssAfterBytes": 216088576,
+        "heapBeforeBytes": 24515256,
+        "heapAfterBytes": 24510736
+      },
+      "hostAndHarnessCpuMs": {
+        "user": 728.956,
+        "system": 145.523
+      },
+      "diagnostics": {
+        "steeringDispositionPending": 0,
+        "turnSettledPending": 0,
+        "turnSettledFailures": 0,
+        "turnSettledDropped": 0,
+        "agentStoppedPending": 0,
+        "agentStoppedFailures": 0,
+        "clients": 32,
+        "activeAgents": 8,
+        "startingAgents": 0,
+        "subscriptions": 64,
+        "serverSeq": 248,
+        "workingSet": {
+          "hotRecords": 0,
+          "passiveReads": 0,
+          "selectedNativeWindows": 0,
+          "selectedNativeTurnIds": 0,
+          "selectedHostWindows": 0,
+          "cursors": {
+            "turns": 0,
+            "native": 0,
+            "mixed": 0,
+            "prefix": 0,
+            "recall": 0,
+            "coordination": 0
+          },
+          "peerBufferedBytes": 0,
+          "handshakeQueuedEvents": 0,
+          "handshakeQueuedBytes": 0
+        },
+        "retainedReplay": {
+          "events": 248,
+          "bytes": 54164
+        },
+        "pendingQueue": {
+          "messages": 0,
+          "bytes": 0
+        }
+      },
+      "noDormantAgentStarts": true,
+      "exactPrompts": 8,
+      "independentHistoryPages": true,
+      "noProtocolSchemaFailures": true
+    },
+    {
+      "indexedSessions": 100000,
+      "indexedWorkspaces": 4000,
+      "presentWorkspaces": 100,
+      "discoverableRoots": 1000,
+      "clients": 32,
+      "activeAgents": 8,
+      "titleActionEcho": {
+        "samples": 160,
+        "p50Ms": 7.454,
+        "p95Ms": 9.506,
+        "p99Ms": 23.63,
+        "maxMs": 24.169
+      },
+      "titleAllFourViewers": {
+        "samples": 160,
+        "p50Ms": 7.85,
+        "p95Ms": 10.047,
+        "p99Ms": 23.675,
+        "maxMs": 24.247
+      },
+      "roundCatalogConvergence": {
+        "samples": 20,
+        "p50Ms": 55.945,
+        "p95Ms": 66.265,
+        "p99Ms": 70.613,
+        "maxMs": 70.613
+      },
+      "convergenceReads": 20,
+      "catalogList50": {
+        "samples": 480,
+        "p50Ms": 26.072,
+        "p95Ms": 42.242,
+        "p99Ms": 45.604,
+        "maxMs": 51.041
+      },
+      "maximumPageBytes": 19927,
+      "harnessAndHostMemory": {
+        "rssBeforeBytes": 133988352,
+        "rssAfterBytes": 216596480,
+        "heapBeforeBytes": 24419192,
+        "heapAfterBytes": 24543984
+      },
+      "hostAndHarnessCpuMs": {
+        "user": 718.982,
+        "system": 141.127
+      },
+      "diagnostics": {
+        "steeringDispositionPending": 0,
+        "turnSettledPending": 0,
+        "turnSettledFailures": 0,
+        "turnSettledDropped": 0,
+        "agentStoppedPending": 0,
+        "agentStoppedFailures": 0,
+        "clients": 32,
+        "activeAgents": 8,
+        "startingAgents": 0,
+        "subscriptions": 64,
+        "serverSeq": 248,
+        "workingSet": {
+          "hotRecords": 0,
+          "passiveReads": 0,
+          "selectedNativeWindows": 0,
+          "selectedNativeTurnIds": 0,
+          "selectedHostWindows": 0,
+          "cursors": {
+            "turns": 0,
+            "native": 0,
+            "mixed": 0,
+            "prefix": 0,
+            "recall": 0,
+            "coordination": 0
+          },
+          "peerBufferedBytes": 0,
+          "handshakeQueuedEvents": 0,
+          "handshakeQueuedBytes": 0
+        },
+        "retainedReplay": {
+          "events": 248,
+          "bytes": 54164
+        },
+        "pendingQueue": {
+          "messages": 0,
+          "bytes": 0
+        }
+      },
+      "noDormantAgentStarts": true,
+      "exactPrompts": 8,
+      "independentHistoryPages": true,
+      "noProtocolSchemaFailures": true
+    }
+  ]
+}

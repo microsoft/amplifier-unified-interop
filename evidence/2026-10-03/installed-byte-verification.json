@@ -1,0 +1,14 @@
+{
+  "host": {
+    "files": 45,
+    "archiveSha256": "2e817365c6d7af64a360cb6981000bbca225372859c29cdde32330558d400ab4",
+    "revision": "30f5129491376a34e8f5fda82f03f012210b8fa3",
+    "version": "0.1.0"
+  },
+  "catalog": {
+    "pythonFiles": 5,
+    "archiveSha256": "fea75b133f2b0f3d32cf7a19e507c1fb483ec18c678a7e1eb992c37800468193",
+    "revision": "36fe815b5cf95b92e4a17b6ed7e540b8eab874ff",
+    "version": "0.1.0"
+  }
+}

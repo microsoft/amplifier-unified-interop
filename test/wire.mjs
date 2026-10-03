@@ -41,7 +41,7 @@ export class Peer{
  static async open(url,headers){const socket=new WebSocket(url,{headers});await new Promise((resolve,reject)=>{socket.once('open',resolve);socket.once('error',reject);});return new Peer(socket);}
  request(method,params){return new Promise((resolve,reject)=>{const id=this.next++;const timer=setTimeout(()=>{this.pending.delete(id);reject(Error('Timeout: '+method));},10000);this.pending.set(id,{resolve,reject,timer});this.socket.send(JSON.stringify({jsonrpc:'2.0',id,method,params}));});}
  dispatch(channel,action,clientSeq){this.socket.send(JSON.stringify({jsonrpc:'2.0',method:'dispatchAction',params:{channel,action,clientSeq}}));}
- wait(predicate){const existing=this.events.find(predicate);if(existing)return Promise.resolve(existing);return new Promise((resolve,reject)=>{const item={predicate,resolve,timer:setTimeout(()=>{this.waiters=this.waiters.filter(x=>x!==item);reject(Error('Event timeout'));},10000)};this.waiters.push(item);});}
+ wait(predicate,timeoutMs=10000){const existing=this.events.find(predicate);if(existing)return Promise.resolve(existing);return new Promise((resolve,reject)=>{const item={predicate,resolve,timer:setTimeout(()=>{this.waiters=this.waiters.filter(x=>x!==item);reject(Error('Event timeout'));},timeoutMs)};this.waiters.push(item);});}
  check(){for(const item of [...this.waiters]){const value=this.events.find(item.predicate);if(value){clearTimeout(item.timer);this.waiters=this.waiters.filter(x=>x!==item);item.resolve(value);}}}
  close(){for(const p of this.pending.values()){clearTimeout(p.timer);p.reject(Error('Peer closed'));}for(const w of this.waiters)clearTimeout(w.timer);this.socket.close();}
 }

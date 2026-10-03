@@ -1,0 +1,27 @@
+
+> @amplifier/unified-interop@0.1.0 test
+> node --test test/*.test.mjs
+
+✔ wire schemas, two clients, scoped catalog and independent ACP execution (402.538958ms)
+✔ upstream permission choices and authoritative denial (256.600209ms)
+✔ bundled protocol schema references remain valid (0.129917ms)
+(node:68347) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"officialPackage":"@microsoft/agent-host-protocol","version":"1.0.0","offered":["1.0.0","0.9.0"],"negotiated":"0.9.0","currentReducerComplete":true,"observerMatches":true,"reconnect":"replay","lostBaselineSnapshot":true,"exactPrompts":1}
+✔ current official AHP client negotiates compatible baseline and reduces live turns across client swaps (235.757667ms)
+✔ vendored upstream artifacts match their recorded revision receipt (2.306875ms)
+(node:68349) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"concurrentControlReceiptMs":1.834875000000011,"waitWasPending":true,"duplicateEffects":1,"handshakeRespected":true}
+✔ installed host keeps long capability waits independent of same-client controls and receipts (135.654875ms)
+{"creationProviders":["alpha","beta"],"clientReplacement":true,"expiredReplay":"snapshot","lostBaseline":"fresh initialize","hostReplacement":"passive persisted projection","exactPrompts":1,"noDormantRestart":true}
+✔ creation chooses agent; replacement clients recover identity and lost state without prompt replay (658.376583ms)
+✔ vendor discovery defaults to no prompts and refuses overwriting a prior receipt (427.734292ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2823.413708

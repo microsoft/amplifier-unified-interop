@@ -1,0 +1,874 @@
+{
+  "createdAt": "2026-10-03T14:26:01.581Z",
+  "scope": "Independent installed public ACP adapters; protocol/model discovery and optional one fresh bounded host turn per adapter. No browser/device/deployment claim.",
+  "promptPolicy": "Never retry. Write unknown admission before dispatch. Refuse client tool effects. Preserve task-owned state and receipts.",
+  "adapters": [
+    {
+      "id": "codex",
+      "package": {
+        "name": "@agentclientprotocol/codex-acp",
+        "version": "2.1.1"
+      },
+      "artifactSha256": "9da0d580518d006d257609a4b64b7c5bd96a7f36f2d86db5c8f2cb9385de5872",
+      "stateDirectory": "/Users/brkrabac/Library/CloudStorage/OneDrive-Microsoft/Documents/Codex/2026-10-03/unified-owner-interop-20261003/work/vendor-state/codex",
+      "transport": "ACP v1 stdio",
+      "direct": {
+        "status": "failed",
+        "error": {
+          "name": "RequestError",
+          "code": 1001,
+          "deadline": false
+        },
+        "refusedClientEffects": 0
+      },
+      "host": {
+        "status": "creation-unknown",
+        "session": "ahp-session:/71096e28-4956-48cd-9128-67452b7dfb3c",
+        "error": {
+          "name": "Error",
+          "code": 1001,
+          "deadline": false
+        }
+      },
+      "accountTurn": {
+        "status": "skipped",
+        "reason": "No explicit fresh prompt requested"
+      }
+    },
+    {
+      "id": "claude",
+      "package": {
+        "name": "@agentclientprotocol/claude-agent-acp",
+        "version": "0.85.1"
+      },
+      "artifactSha256": "d978cbaa5a97ef5e70b5f7b303089f5289fa54f84b7ff2685b84436378566d3a",
+      "stateDirectory": "/Users/brkrabac/Library/CloudStorage/OneDrive-Microsoft/Documents/Codex/2026-10-03/unified-owner-interop-20261003/work/vendor-state/claude",
+      "transport": "ACP v1 stdio",
+      "direct": {
+        "status": "initialized",
+        "agentInfo": {
+          "name": "@agentclientprotocol/claude-agent-acp",
+          "title": "Claude Agent",
+          "version": "0.85.1"
+        },
+        "capabilities": {
+          "_meta": {
+            "claudeCode": {
+              "promptQueueing": true
+            },
+            "authStatus": {}
+          },
+          "promptCapabilities": {
+            "image": true,
+            "embeddedContext": true
+          },
+          "mcpCapabilities": {
+            "http": true,
+            "sse": true
+          },
+          "auth": {
+            "logout": {}
+          },
+          "providers": {},
+          "loadSession": true,
+          "sessionCapabilities": {
+            "additionalDirectories": {},
+            "close": {},
+            "delete": {},
+            "fork": {},
+            "list": {},
+            "resume": {},
+            "subagents": {}
+          }
+        },
+        "authMethods": [],
+        "sessionStatus": "created",
+        "nativeSessionId": "3754cc17-b273-4d21-b522-55fedab24418",
+        "configOptions": [
+          {
+            "id": "mode",
+            "name": "Mode",
+            "category": "mode",
+            "type": "select",
+            "currentValue": "default",
+            "options": [
+              {
+                "value": "default",
+                "name": "Manual",
+                "description": "Always ask before making changes"
+              },
+              {
+                "value": "acceptEdits",
+                "name": "Accept edits",
+                "description": "Automatically accept all file edits"
+              },
+              {
+                "value": "plan",
+                "name": "Plan",
+                "description": "Create a plan before making changes"
+              },
+              {
+                "value": "auto",
+                "name": "Auto",
+                "description": "Claude handles permission decisions"
+              },
+              {
+                "value": "bypassPermissions",
+                "name": "Bypass permissions",
+                "description": "Accepts all permissions"
+              }
+            ]
+          },
+          {
+            "id": "model",
+            "name": "Model",
+            "category": "model",
+            "type": "select",
+            "currentValue": "default",
+            "options": [
+              {
+                "value": "default",
+                "name": "Default (recommended)",
+                "description": "Opus"
+              },
+              {
+                "value": "opus",
+                "name": "Opus 5.5",
+                "description": "Opus 5.5 · Best for everyday, complex tasks · $4/$20 per Mtok"
+              },
+              {
+                "value": "claude-fable-5-1",
+                "name": "Fable 5.1",
+                "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks · $10/$50 per Mtok"
+              },
+              {
+                "value": "sonnet",
+                "name": "Sonnet 5.5",
+                "description": "Sonnet 5.5 · Efficient for routine tasks · $2/$10 per Mtok"
+              },
+              {
+                "value": "haiku",
+                "name": "Haiku 4.5",
+                "description": "Haiku 4.5 · Fastest for quick answers · $1/$5 per Mtok"
+              }
+            ]
+          },
+          {
+            "id": "effort",
+            "name": "Effort",
+            "category": "thought_level",
+            "type": "select",
+            "currentValue": "default",
+            "options": [
+              {
+                "value": "default",
+                "name": "Default"
+              },
+              {
+                "value": "low",
+                "name": "Low"
+              },
+              {
+                "value": "medium",
+                "name": "Medium"
+              },
+              {
+                "value": "high",
+                "name": "High"
+              },
+              {
+                "value": "xhigh",
+                "name": "Xhigh"
+              },
+              {
+                "value": "max",
+                "name": "Max"
+              }
+            ]
+          },
+          {
+            "id": "fast",
+            "name": "Fast mode",
+            "category": "model_config",
+            "type": "select",
+            "currentValue": "off",
+            "options": [
+              {
+                "value": "on",
+                "name": "On"
+              },
+              {
+                "value": "off",
+                "name": "Off"
+              }
+            ]
+          }
+        ],
+        "legacyModes": {
+          "currentModeId": "default",
+          "availableModes": [
+            {
+              "id": "default",
+              "name": "Manual",
+              "description": "Always ask before making changes"
+            },
+            {
+              "id": "acceptEdits",
+              "name": "Accept edits",
+              "description": "Automatically accept all file edits"
+            },
+            {
+              "id": "plan",
+              "name": "Plan",
+              "description": "Create a plan before making changes"
+            },
+            {
+              "id": "auto",
+              "name": "Auto",
+              "description": "Claude handles permission decisions"
+            },
+            {
+              "id": "bypassPermissions",
+              "name": "Bypass permissions",
+              "description": "Accepts all permissions"
+            }
+          ]
+        },
+        "promptCalls": 0,
+        "refusedClientEffects": 0
+      },
+      "host": {
+        "status": "created",
+        "session": "ahp-session:/98f8404e-5d41-4669-bc7b-2aa63db23447",
+        "provider": "claude",
+        "config": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "mode": {
+                "type": "string",
+                "title": "Mode",
+                "description": "Session permission mode",
+                "enum": [
+                  "default",
+                  "acceptEdits",
+                  "plan",
+                  "auto",
+                  "bypassPermissions"
+                ],
+                "enumLabels": [
+                  "Manual",
+                  "Accept edits",
+                  "Plan",
+                  "Auto",
+                  "Bypass permissions"
+                ],
+                "sessionMutable": true
+              },
+              "model": {
+                "type": "string",
+                "title": "Model",
+                "description": "AI model to use",
+                "enum": [
+                  "default",
+                  "opus",
+                  "claude-fable-5-1",
+                  "sonnet",
+                  "haiku"
+                ],
+                "enumLabels": [
+                  "Default (recommended)",
+                  "Opus 5.5",
+                  "Fable 5.1",
+                  "Sonnet 5.5",
+                  "Haiku 4.5"
+                ],
+                "sessionMutable": true
+              },
+              "effort": {
+                "type": "string",
+                "title": "Effort",
+                "description": "Available effort levels for this model",
+                "enum": [
+                  "default",
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ],
+                "enumLabels": [
+                  "Default",
+                  "Low",
+                  "Medium",
+                  "High",
+                  "Xhigh",
+                  "Max"
+                ],
+                "sessionMutable": true
+              },
+              "fast": {
+                "type": "string",
+                "title": "Fast mode",
+                "description": "Faster responses on supported models",
+                "enum": [
+                  "on",
+                  "off"
+                ],
+                "enumLabels": [
+                  "On",
+                  "Off"
+                ],
+                "sessionMutable": true
+              }
+            }
+          },
+          "values": {
+            "mode": "default",
+            "model": "default",
+            "effort": "default",
+            "fast": "off"
+          }
+        },
+        "acp": {
+          "capabilities": {
+            "_meta": {
+              "claudeCode": {
+                "promptQueueing": true
+              },
+              "authStatus": {}
+            },
+            "promptCapabilities": {
+              "image": true,
+              "embeddedContext": true
+            },
+            "mcpCapabilities": {
+              "http": true,
+              "sse": true
+            },
+            "auth": {
+              "logout": {}
+            },
+            "providers": {},
+            "loadSession": true,
+            "sessionCapabilities": {
+              "additionalDirectories": {},
+              "close": {},
+              "delete": {},
+              "fork": {},
+              "list": {},
+              "resume": {},
+              "subagents": {}
+            }
+          },
+          "configOptions": [
+            {
+              "id": "mode",
+              "name": "Mode",
+              "description": "Session permission mode",
+              "category": "mode",
+              "type": "select",
+              "currentValue": "default",
+              "options": [
+                {
+                  "value": "default",
+                  "name": "Manual",
+                  "description": "Always ask before making changes"
+                },
+                {
+                  "value": "acceptEdits",
+                  "name": "Accept edits",
+                  "description": "Automatically accept all file edits"
+                },
+                {
+                  "value": "plan",
+                  "name": "Plan",
+                  "description": "Create a plan before making changes"
+                },
+                {
+                  "value": "auto",
+                  "name": "Auto",
+                  "description": "Claude handles permission decisions"
+                },
+                {
+                  "value": "bypassPermissions",
+                  "name": "Bypass permissions",
+                  "description": "Accepts all permissions"
+                }
+              ]
+            },
+            {
+              "id": "model",
+              "name": "Model",
+              "description": "AI model to use",
+              "category": "model",
+              "type": "select",
+              "currentValue": "default",
+              "options": [
+                {
+                  "value": "default",
+                  "name": "Default (recommended)",
+                  "description": "Opus"
+                },
+                {
+                  "value": "opus",
+                  "name": "Opus 5.5",
+                  "description": "Opus 5.5 · Best for everyday, complex tasks · $4/$20 per Mtok"
+                },
+                {
+                  "value": "claude-fable-5-1",
+                  "name": "Fable 5.1",
+                  "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks · $10/$50 per Mtok"
+                },
+                {
+                  "value": "sonnet",
+                  "name": "Sonnet 5.5",
+                  "description": "Sonnet 5.5 · Efficient for routine tasks · $2/$10 per Mtok"
+                },
+                {
+                  "value": "haiku",
+                  "name": "Haiku 4.5",
+                  "description": "Haiku 4.5 · Fastest for quick answers · $1/$5 per Mtok"
+                }
+              ]
+            },
+            {
+              "id": "effort",
+              "name": "Effort",
+              "description": "Available effort levels for this model",
+              "category": "thought_level",
+              "type": "select",
+              "currentValue": "default",
+              "options": [
+                {
+                  "value": "default",
+                  "name": "Default"
+                },
+                {
+                  "value": "low",
+                  "name": "Low"
+                },
+                {
+                  "value": "medium",
+                  "name": "Medium"
+                },
+                {
+                  "value": "high",
+                  "name": "High"
+                },
+                {
+                  "value": "xhigh",
+                  "name": "Xhigh"
+                },
+                {
+                  "value": "max",
+                  "name": "Max"
+                }
+              ]
+            },
+            {
+              "id": "fast",
+              "name": "Fast mode",
+              "description": "Faster responses on supported models",
+              "category": "model_config",
+              "type": "select",
+              "currentValue": "off",
+              "options": [
+                {
+                  "value": "on",
+                  "name": "On"
+                },
+                {
+                  "value": "off",
+                  "name": "Off"
+                }
+              ]
+            }
+          ],
+          "configOptionsProtocol": "standard",
+          "legacyModes": {
+            "currentModeId": "default",
+            "availableModes": [
+              {
+                "id": "default",
+                "name": "Manual",
+                "description": "Always ask before making changes"
+              },
+              {
+                "id": "acceptEdits",
+                "name": "Accept edits",
+                "description": "Automatically accept all file edits"
+              },
+              {
+                "id": "plan",
+                "name": "Plan",
+                "description": "Create a plan before making changes"
+              },
+              {
+                "id": "auto",
+                "name": "Auto",
+                "description": "Claude handles permission decisions"
+              },
+              {
+                "id": "bypassPermissions",
+                "name": "Bypass permissions",
+                "description": "Accepts all permissions"
+              }
+            ]
+          },
+          "availableCommands": [
+            {
+              "name": "deep-research",
+              "description": "Deep research harness — fan-out web searches, fetch sources, adversarially verify claims, synthesize a cited report. (dynamic workflow)",
+              "input": null
+            },
+            {
+              "name": "design",
+              "description": "Grant or revoke Claude agent access to your Design projects",
+              "input": {
+                "hint": "consent | revoke"
+              }
+            },
+            {
+              "name": "design-sync",
+              "description": "Push a React design system to claude.ai/design. This runs a converter that bundles the real component code (from Storybook or a bare package) and uploads it. Use when the user runs /design-sync or says \"sync my design system to Claude Design\".",
+              "input": {
+                "hint": "[<project hint, e.g. \"Acme DS\">]"
+              }
+            },
+            {
+              "name": "dataviz",
+              "description": "Use this skill whenever you are about to create ANY chart, graph, plot, dashboard, or data visualization, in ANY output medium — an HTML or React artifact, inline SVG, plotting code in any library (matplotlib, plotly, d3, Recharts, …), an image/PNG you will render and upload, or a chart shared into Slack. Read it BEFORE writing the first line of chart code, choosing chart colors, building a stat tile / meter / KPI row, or laying out a dashboard. When the destination is a first-party document connector (host-designated, never self-described) that renders live charts, hand it the rows (inline, or as an uploaded data file the chart cites) rather than a rendered PNG/SVG — a picture of a chart loses hover, data inspection and per-value comments. Produces visualizations that read as one system — elegant, accessible, consistent in light and dark — using a brand-neutral placeholder palette you swap for your own. Teaches a design-system-agnostic method: a form heuristic, a color formula with a runnable validator, mark specs, and interaction rules. A validated default palette is documented in `references/palette.md` — swap that file's values for your brand's. Triggers on: \"chart\", \"graph\", \"plot\", \"data viz\", \"visualization\", \"dashboard\", \"analytics\", \"visualize data\", \"categorical colors\", \"sequential / diverging palette\", \"stat tile\", \"sparkline\", \"heatmap\", \"legend\", \"axis\", \"tooltip\", \"chart colors\", \"color by series\".",
+              "input": null
+            },
+            {
+              "name": "update-config",
+              "description": "Use this skill to configure the Claude Code harness via settings.json. Automated behaviors (\"from now on when X\", \"each time X\", \"whenever X\", \"before/after X\") require hooks configured in settings.json - the harness executes these, not Claude, so memory/preferences cannot fulfill them. Also use for: permissions (\"allow X\", \"add permission\", \"move permission to\"), env vars (\"set X=Y\"), hook troubleshooting, or any changes to settings.json/settings.local.json files. Examples: \"allow npm commands\", \"add bq permission to global settings\", \"move permission to user settings\", \"set DEBUG=true\", \"when claude stops show X\". For simple settings like theme/model, suggest the /config command.",
+              "input": null
+            },
+            {
+              "name": "verify",
+              "description": "Verify that a code change actually does what it's supposed to by exercising it end-to-end and observing behavior — drive the affected flow, not just tests or typecheck. Run before committing nontrivial changes; bootstraps this repo's project verify skill if none exists yet. Don't invoke it on a diff that only touches tests, docs, or other code with no runtime surface to drive (a change to product source always has one) — there's nothing to observe.",
+              "input": null
+            },
+            {
+              "name": "debug",
+              "description": "Enable debug logging for this session and help diagnose issues",
+              "input": {
+                "hint": "[issue description]"
+              }
+            },
+            {
+              "name": "code-review",
+              "description": "Review the current diff, or a PR number/branch/path target, for correctness bugs (plus reuse/simplification/efficiency cleanups where the model's review recipe covers them) at the given effort level (low/medium: fewer, high-confidence findings; high→max: broader coverage, may include uncertain findings); with no level given, it reuses the level you typed last. Pass --comment to post findings as inline PR comments, or --fix to apply the findings to the working tree after the review.",
+              "input": {
+                "hint": "[low|medium|high|xhigh|max] [--fix] [--comment] [<pr#>|<branch>|<path>]"
+              }
+            },
+            {
+              "name": "simplify",
+              "description": "Review the changed code for reuse, simplification, efficiency, and altitude cleanups, then apply the fixes. Quality only — it does not hunt for bugs; use /code-review for that.",
+              "input": {
+                "hint": "[<target>]"
+              }
+            },
+            {
+              "name": "batch",
+              "description": "Research and plan a large-scale change, then execute it in parallel across 5–30 isolated worktree agents that each open a PR.",
+              "input": {
+                "hint": "<instruction>"
+              }
+            },
+            {
+              "name": "fewer-permission-prompts",
+              "description": "Scan your transcripts for common read-only Bash and MCP tool calls, then add a prioritized allowlist to project .claude/settings.json to reduce permission prompts.",
+              "input": null
+            },
+            {
+              "name": "doctor",
+              "description": "Health-check the user's Claude Code setup and fix issues: diagnose installation health — what the `claude doctor` terminal diagnostics cover — from local data (duplicate or leftover installs, PATH, unparseable settings files, broken or colliding agent definitions, skills whose frontmatter fails to parse); find unused skills, MCP servers, and plugins versus their context cost and disable dead weight; deduplicate local CLAUDE.md files against checked-in ones; trim checked-in CLAUDE.md files by cutting content a session could derive from the codebase (directory layouts, tech-stack lists, architecture overviews) while keeping gotchas, rationale, and non-standard conventions; migrate always-loaded CLAUDE.md guidance into lazy skills and nested CLAUDE.md files; flag slow hooks and context-heavy extensions; check the installed version is current; make auto mode the default permission mode; and pre-approve frequently denied read-only commands. Use when the user asks for a doctor run, checkup, audit, tune-up, or cleanup of their Claude Code setup or configuration.",
+              "input": {
+                "hint": "[prompt-audit [<path>]]"
+              }
+            },
+            {
+              "name": "loop",
+              "description": "Run a prompt or slash command on a recurring interval (e.g. /loop 5m /foo). Omit the interval to let the model self-pace.",
+              "input": {
+                "hint": "[interval] [prompt]"
+              }
+            },
+            {
+              "name": "claude-api",
+              "description": "Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER — read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" — whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) — never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named — don't Read the file).",
+              "input": null
+            },
+            {
+              "name": "workflow-authoring",
+              "description": "Reference for writing a Workflow tool script (script API and gotchas, resume, quality patterns, worked examples). Load before authoring a script for a workflow the user already opted into; it does not itself authorize running one.",
+              "input": null
+            },
+            {
+              "name": "run",
+              "description": "Launch and drive this project's app to see a change working. Use when asked to run, start, or screenshot the app, or to confirm a change works in the real app (not just tests). First looks for a project skill that already covers launching the app; otherwise falls back to built-in patterns per project type (CLI, server, TUI, Electron, browser-driven, library).",
+              "input": null
+            },
+            {
+              "name": "run-skill-generator",
+              "description": "Author or improve the run-<unit> skill - a per-project skill that tells agents how to build, launch, and drive this project's app. Use when the user asks to set up the project, get it running, write run instructions, or verify build/run steps work from a clean environment.",
+              "input": null
+            },
+            {
+              "name": "plugin-authoring",
+              "description": "Make a mod: a live pane, band, status line, toast or hook inside Claude Code (terminal or desktop Code tab), written as a plugin of function hooks that hot-reloads in this session. Load before writing or debugging a hooks module.",
+              "input": null
+            },
+            {
+              "name": "agents",
+              "description": "(removed) Ask Claude to create/manage subagents, or edit .claude/agents/",
+              "input": null
+            },
+            {
+              "name": "auto-mode-setup",
+              "description": "Teach auto mode about your environment, plus optional rule tweaks",
+              "input": {
+                "hint": "[--request-id <uuid>] (--wizard posture=… scope=… depth=… --propose | --expect-sha256 <64-hex> --apply-file <path>)"
+              }
+            },
+            {
+              "name": "autocompact",
+              "description": "Configure the auto-compact window size",
+              "input": {
+                "hint": "[auto|<tokens>]"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Set the prompt bar color for this session",
+              "input": {
+                "hint": "[red|blue|green|yellow|purple|orange|pink|cyan|default]"
+              }
+            },
+            {
+              "name": "compact",
+              "description": "Free up context by summarizing the conversation so far",
+              "input": {
+                "hint": "<optional custom summarization instructions>"
+              }
+            },
+            {
+              "name": "config",
+              "description": "Set a setting by key",
+              "input": {
+                "hint": "key=value"
+              }
+            },
+            {
+              "name": "output-style",
+              "description": "List output styles or switch to one",
+              "input": {
+                "hint": "[style]"
+              }
+            },
+            {
+              "name": "context",
+              "description": "Show current context usage",
+              "input": null
+            },
+            {
+              "name": "effort",
+              "description": "Set effort level for model usage",
+              "input": {
+                "hint": "<low|medium|high|xhigh|max|auto|ultracode [on|off]>"
+              }
+            },
+            {
+              "name": "fast",
+              "description": "Toggle fast mode (Opus 5.5)",
+              "input": {
+                "hint": "[on|off]"
+              }
+            },
+            {
+              "name": "focus",
+              "description": "Toggle focus view: just your prompt, summary, and response",
+              "input": {
+                "hint": "[on|off]"
+              }
+            },
+            {
+              "name": "heapdump",
+              "description": "Dump the JS heap to the Desktop; on Linux with no Desktop folder, the home directory",
+              "input": null
+            },
+            {
+              "name": "init",
+              "description": "Initialize a new CLAUDE.md file with codebase documentation",
+              "input": null
+            },
+            {
+              "name": "mcp",
+              "description": "Manage MCP servers",
+              "input": {
+                "hint": "[reconnect|enable|disable [<server>|all]]"
+              }
+            },
+            {
+              "name": "model",
+              "description": "Set the AI model for Claude Code",
+              "input": {
+                "hint": "<model>"
+              }
+            },
+            {
+              "name": "__remote-workflow",
+              "description": "Run the workflow script delivered in this session environment (server-launched sessions only)",
+              "input": null
+            },
+            {
+              "name": "workflow-launch-exec",
+              "description": "Execute a server-launched workflow handoff (workflow_launch event sessions only)",
+              "input": null
+            },
+            {
+              "name": "plugin-types",
+              "description": "Write claude-code.d.ts, claude-code-plugins.d.ts and claude-code-mcp.d.ts: the plugin API's TypeScript declarations, the enabled plugins' type contracts and the inputs of the connected MCP tools, for typing a hooks module against this session",
+              "input": {
+                "hint": "[dir]"
+              }
+            },
+            {
+              "name": "reload-plugins",
+              "description": "Activate pending plugin changes in the current session",
+              "input": {
+                "hint": "[--force]"
+              }
+            },
+            {
+              "name": "reload-skills",
+              "description": "Pick up skills added or changed on disk during this session",
+              "input": null
+            },
+            {
+              "name": "rename",
+              "description": "Rename the current conversation",
+              "input": {
+                "hint": "[name]"
+              }
+            },
+            {
+              "name": "security-review",
+              "description": "Complete a security review of the pending changes on the current branch",
+              "input": null
+            },
+            {
+              "name": "usage",
+              "description": "Show session cost, plan usage, and what's contributing to your limits",
+              "input": null
+            },
+            {
+              "name": "insights",
+              "description": "Generate a report analyzing your Claude Code sessions",
+              "input": null
+            },
+            {
+              "name": "recap",
+              "description": "Generate a one-line session recap now",
+              "input": null
+            },
+            {
+              "name": "goal",
+              "description": "Set a goal — keep working until the condition is met",
+              "input": null
+            },
+            {
+              "name": "design-consent",
+              "description": "Grant Claude agent access to your Design projects",
+              "input": null
+            },
+            {
+              "name": "design-revoke",
+              "description": "Revoke Claude agent access to your Design projects",
+              "input": null
+            },
+            {
+              "name": "list-agents",
+              "description": "List subagents, teammates, and other Claude sessions you can message",
+              "input": null
+            },
+            {
+              "name": "team-onboarding",
+              "description": "Help teammates ramp on Claude Code with a guide from your usage",
+              "input": null
+            }
+          ]
+        },
+        "schemaFailures": 0
+      },
+      "accountTurn": {
+        "status": "skipped",
+        "reason": "No explicit fresh prompt requested"
+      }
+    },
+    {
+      "id": "copilot",
+      "package": {
+        "name": "@github/copilot",
+        "version": "1.0.91"
+      },
+      "artifactSha256": "4f305d718a1e6cb994e926d0f570883eb63bfb79ef091d00d5ff9c67d9d83781",
+      "stateDirectory": "/Users/brkrabac/Library/CloudStorage/OneDrive-Microsoft/Documents/Codex/2026-10-03/unified-owner-interop-20261003/work/vendor-state/copilot",
+      "transport": "ACP v1 stdio",
+      "direct": {
+        "status": "initialized",
+        "agentInfo": {
+          "name": "Copilot",
+          "title": "Copilot",
+          "version": "1.0.91"
+        },
+        "capabilities": {
+          "loadSession": true,
+          "mcpCapabilities": {
+            "http": true,
+            "sse": true
+          },
+          "promptCapabilities": {
+            "image": true,
+            "audio": false,
+            "embeddedContext": true
+          },
+          "sessionCapabilities": {
+            "close": {},
+            "list": {}
+          }
+        },
+        "authMethods": [
+          {
+            "id": "copilot-login",
+            "name": "Log in with Copilot CLI"
+          }
+        ],
+        "sessionStatus": "failed-or-unknown",
+        "error": {
+          "name": "RequestError",
+          "code": -32000,
+          "deadline": false
+        },
+        "refusedClientEffects": 0
+      },
+      "host": {
+        "status": "creation-unknown",
+        "session": "ahp-session:/b893c8e4-bca2-4d42-b0bb-0920c34909c6",
+        "error": {
+          "name": "Error",
+          "code": -32000,
+          "deadline": false
+        }
+      },
+      "accountTurn": {
+        "status": "skipped",
+        "reason": "No explicit fresh prompt requested"
+      }
+    }
+  ]
+}
