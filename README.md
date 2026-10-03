@@ -1,5 +1,10 @@
 # Amplifier Unified interoperability qualification
 
+Repository direction: [local vision](VISION.md),
+[versioned contract and acceptance map](CONTRACT.v1.md), and
+[agent entry point](AGENTS.md). These document inherited approved family promises;
+upstream AHP/ACP remain authoritative and current evidence covers narrower cases.
+
 Independent peers and protocol checks for Amplifier Unified. Fixtures import no
 host, agent or client implementation. Candidate programs are launched through
 public executable interfaces in owned temporary state; no native history,
@@ -33,9 +38,11 @@ as protocol success. Recheck this adapter when refreshing upstream schemas.
 
 ## Qualification still required
 
-The independently installed Amplifier ACP wheel, actual browser and terminal
-clients, recovery/crash and load tests, and external Copilot/Codex/Claude peers
-have separate evidence rows. This repository does not claim those from an echo
+The installed native reader, load/recovery fixtures, actual browser/terminal
+clients and vendor adapters have separate evidence rows. The
+[current matrix](evidence/2026-10-03/qualification.json) records the qualified
+native/scale/Codex/Copilot scenarios; [remaining gaps](CONTRACT.v1.md#qualification-gaps-no-implied-retirement)
+retain their distinct acceptance boundaries. This repository does not claim those from an echo
 fixture. Installed artifacts, exact revisions, transport, capabilities and
 account requirements must accompany a completed qualification row.
 
