@@ -12,3 +12,5 @@ Keep fixture/source/installed/account/UI/deployment evidence distinct and skips
 visible. Follow the README for scoped checks; documentation-only changes need
 link/scope and artifact-equality checks rather than unnecessary runtime reruns.
 Preserve sealed implementation receipts when recording a documentation successor.
+
+This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.
