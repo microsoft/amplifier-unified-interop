@@ -1,0 +1,108 @@
+{
+  "citations": [
+    {
+      "git_blob": "946b777f944ca32348f9808b1a2254ce8ea3dd68",
+      "path": "README.md",
+      "ref": "78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec",
+      "sha256": "37bc2a749782367042f476615606b51c1364bdee35a5f0b97c9e66e9250eda7f",
+      "url": "https://github.com/microsoft/amplifier-unified-interop/blob/78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec/README.md"
+    },
+    {
+      "git_blob": "a78375dbca2fac953a68f6a55a8580d389d5070c",
+      "path": "CONTRACT.v1.md",
+      "ref": "78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec",
+      "sha256": "c7710880041bc9319ddf3aa95c18c2cebb5399452b097c7be72eb8937fc36d0f",
+      "url": "https://github.com/microsoft/amplifier-unified-interop/blob/78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec/CONTRACT.v1.md"
+    }
+  ],
+  "consumer_cta": {
+    "basis": "Existing approved README route; target release assets/availability not freshly audited in this plan.",
+    "label": "Run integration checks",
+    "url": "https://github.com/microsoft/amplifier-unified-interop#get-started"
+  },
+  "display_name": "Amplifier Unified Interoperability Checks",
+  "edges": [
+    {
+      "from": "self",
+      "relation": "contains",
+      "to": "peers"
+    },
+    {
+      "from": "self",
+      "relation": "contains",
+      "to": "checks"
+    },
+    {
+      "from": "self",
+      "relation": "uses",
+      "to": "host"
+    },
+    {
+      "from": "self",
+      "relation": "uses",
+      "to": "agents"
+    },
+    {
+      "from": "self",
+      "relation": "uses",
+      "to": "clients"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "self",
+      "kind": "self",
+      "label": "Amplifier Unified Interoperability Checks",
+      "repository": "microsoft/amplifier-unified-interop"
+    },
+    {
+      "id": "peers",
+      "kind": "internal",
+      "label": "Synthetic protocol peers"
+    },
+    {
+      "id": "checks",
+      "kind": "internal",
+      "label": "Boundary & recovery checks"
+    },
+    {
+      "id": "host",
+      "kind": "external",
+      "label": "Independently installed host",
+      "repository": "microsoft/amplifier-unified-host"
+    },
+    {
+      "id": "agents",
+      "kind": "external",
+      "label": "Independent ACP agents"
+    },
+    {
+      "id": "clients",
+      "kind": "external",
+      "label": "Independent clients"
+    }
+  ],
+  "notes": [
+    "This is validation infrastructure, not a user experience or runtime component.",
+    "An omitted host command skips process checks; schema passes alone do not establish functioning host or real providers.",
+    "Do not draw the fixture suite as a production runtime dependency."
+  ],
+  "purpose": "Check public integration boundaries with independent peers and deterministic fixtures.",
+  "ref": "78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec",
+  "repository": "microsoft/amplifier-unified-interop",
+  "roles": [],
+  "scope": "independent conformance harness",
+  "start_cta": {
+    "basis": "Existing approved README route; target release assets/availability not freshly audited in this plan.",
+    "label": "Run integration checks",
+    "url": "https://github.com/microsoft/amplifier-unified-interop#get-started"
+  },
+  "summary": "Independent test peers exercising public host/client/agent boundaries.",
+  "supports_roles": [
+    "Experience",
+    "Conversation",
+    "Connection",
+    "Agent Instance"
+  ],
+  "visibility": "private"
+}
