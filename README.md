@@ -1,198 +1,64 @@
-# Amplifier Unified interoperability qualification
+# Amplifier Unified Interoperability Checks
 
-Repository direction: [local vision](VISION.md),
-[versioned contract and acceptance map](CONTRACT.v1.md), and
-[agent entry point](AGENTS.md). These document inherited approved family promises;
-upstream AHP/ACP remain authoritative and current evidence covers narrower cases.
+Independent protocol peers and checks for developers integrating Amplifier Unified
+hosts, clients, and ACP agents. Use them to test public interfaces without importing
+the component's private implementation.
 
-Independent peers and protocol checks for Amplifier Unified. Fixtures import no
-host, agent or client implementation. Candidate programs are launched through
-public executable interfaces in owned temporary state; no native history,
-credentials, real models or shared services are used by default.
+The default fixtures use temporary state and synthetic agents. They do not need
+provider credentials or make model calls.
+
+## Get started
+
+Install the dependencies from a checkout and point the harness at an independently
+installed Unified Host executable:
 
 ```sh
 npm ci
 UNIFIED_HOST_COMMAND='["amplifier-unified-host"]' npm test
 ```
 
-`UNIFIED_HOST_COMMAND` is a JSON argv array, not shell code. The harness appends
-`--config` with a generated private configuration and launches an independent
-ACP v1 subprocess fixture. Without that variable, process acceptance tests are
-explicitly skipped; a green schema-only run is not integration acceptance.
+`UNIFIED_HOST_COMMAND` is a JSON argument array, not shell code. The harness supplies
+its own private configuration and launches an independent ACP peer. If you omit the
+variable, process checks are skipped; passing only the schema checks does not prove
+the host works.
 
-Current wire journeys validate initialization, root/session/chat snapshots,
-scoped catalog pages, every observed concrete action, permission denial, two
-viewers seeing the same result and duplicate prompt rejection. The fixture
-records received prompts so duplicate effects can be detected independently.
-This is component interoperability evidence, not vendor or live-account approval.
+The core checks cover initialization, conversation state, streaming updates,
+permissions, multiple viewers, reconnects, and duplicate-request handling.
 
-## Upstream evidence
+## Run a more specific check
 
-`upstream/ahp/` contains unchanged AHP0.9 generated schemas, license and SHA256
-provenance. The generated StateAction union at the recorded upstream revision
-contains a dangling `#/$defs/` member. The harness therefore validates the
-unchanged envelope shape and each concrete action definition separately,
-selecting the definition by its upstream literal discriminator. Unknown actions
-fail. It never removes a field requirement or silently treats a schema failure
-as protocol success. Recheck this adapter when refreshing upstream schemas.
+The [contract and check map](CONTRACT.v1.md) explains the additional inputs for
+installed native readers, catalog scaling, client substitution, and recovery.
+Use owned test state and independently installed candidate programs. Account-backed
+vendor checks require separate credentials and authorization.
 
-## Qualification still required
+Keep results scoped to what actually ran: an echo agent cannot establish browser
+usability, native-runtime behavior, or real-provider support.
 
-The installed native reader, load/recovery fixtures, actual browser/terminal
-clients and vendor adapters have separate evidence rows. The
-[current matrix](evidence/2026-10-03/qualification.json) records the qualified
-native/scale/Codex/Copilot scenarios; [remaining gaps](CONTRACT.v1.md#qualification-gaps-no-implied-retirement)
-retain their distinct acceptance boundaries. This repository does not claim those from an echo
-fixture. Installed artifacts, exact revisions, transport, capabilities and
-account requirements must accompany a completed qualification row.
+## Reference
 
-## Combined catalog and live-update scale check
+- [Check map and integration boundaries](CONTRACT.v1.md)
+- [Protocol fixtures](test/)
+- [AHP schema inputs](upstream/ahp/)
 
-`node test/scale-composition.mjs /owned/receipt.json` qualifies independently
-installed host/catalog components with 32 AHP wire clients, eight active ACP
-fixture agents, 4,000 historical projects, 100 existing directories and 1,000
-discoverable root sessions. It varies total stored history from 25,000 to 100,000
-while keeping that active set fixed. Eight concurrent standard AHP title-action
-notifications share the host with 24 catalog page requests. The test measures the
-authoritative origin-correlated action echo, receipt by all four subscribed
-viewers, and read-visible catalog convergence separately. A client action echo
-is not a catalog disk receipt; convergence is measured after the concurrent
-round finishes and can include scheduling and page-request latency.
+## Contributing
 
-Set `UNIFIED_HOST_MODULE` to the installed host package's exported module,
-`CATALOG_PYTHON` to an independent installed catalog environment,
-`UNIFIED_HOST_REVISION` and `CATALOG_REVISION` to their qualified 40-character
-commits, and `UNIFIED_HOST_ARTIFACT` to the installed host's verified archive.
-The fixture seed explicitly targets catalog schema 1 and is outside measured work.
-The catalog subprocess rejects event-log opens. No accounts, native history or
-model providers are used, and temporary stores are removed on completion.
+Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit [Contributor License Agreements](https://cla.opensource.microsoft.com).
 
-Receipts include p50/p95/p99, process memory/CPU, wire-schema failures, exact
-prompt counts and component identities. The Node process includes benchmark
-clients; these measurements do not establish browser paint, cold native-history,
-subprocess memory or slow-socket backpressure acceptance. Fixed-active-set scaling
-is a separate claim from a production deployment or a real-model latency result.
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.
 
-## Working-set, backpressure and cold native-history acceptance
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-Use the same installed `UNIFIED_HOST_MODULE`, `UNIFIED_HOST_ARTIFACT` and
-`CATALOG_PYTHON` inputs, with exact source revisions recorded in the environment:
+## Trademarks
 
-```sh
-node test/working-set-acceptance.mjs /owned/working-set-receipt.json
-NATIVE_ACP_PYTHON=/owned/native-env/bin/python \
-  node test/cold-native-acceptance.mjs /owned/native-cold-receipt.json
-UNIFIED_HOST_MODULE=/owned/host/dist/index.js node --test test/rpc-concurrency.test.mjs
-```
-
-The working-set fixture uses 32 actual WebSocket peers and eight resident ACP
-processes. One client pauses its real socket while a healthy viewer receives a
-7.5 MiB stream; unrelated viewers receive no chat actions. It checks bounded
-pending intents, retained replay, authoritative gap recovery, 4,096-entry cursor
-eviction, last-viewer cache release, and completion without chat viewers. Cold
-history and worker-index pages in this first test are generated by an independent
-ACP peer. An omitted AHP view explicitly requests all 1,500 retained fixture turns;
-it must never silently return a smaller window.
-
-The separate native test uses an independently installed Amplifier ACP package
-against 10,000 canonical historical turns and 700 cataloged child sessions. Its
-instrumented launcher rejects event-log opens and any worker subprocess launch,
-and counts actual transcript bytes read through the passive reader. Selected
-history returns 50 turns without reading the entire source; unrelated metadata and
-explicit child-index pages perform no additional native reads. Fixture source
-hashes are checked afterward. This is passive installed-reader evidence, not a
-model call or a browser rendering claim. Child inventory uses the public catalog
-parent query; the worker-tree fixture separately exercises the public host callback.
-
-The generic RPC test pipelines a long capability wait behind initialization, then
-issues same-client controls, exact receipt checks and independent reads while it
-is still waiting. It verifies the handshake barrier, one-effect duplicate admission,
-and sub-two-second control completion without operation-specific dispatch rules.
-
-## Current public peers and creation/recovery swaps
-
-The [2026-10-03 receipt](evidence/2026-10-03/qualification.json) qualifies sealed
-installed host `30f51294`, catalog `36fe815b` and native passive reader `f530e541`.
-Eight harness checks passed without skips. Separate scale/working-set/cold-reader
-receipts retain their exact scenarios; these counts are not an assembled product pass.
-
-`substitution-recovery.test.mjs` launches the public host executable with two ACP
-fixture identities. Creation selects the agent, replacement clients retain its
-identity and history, expired replay returns snapshots, lost local baselines
-initialize afresh, and process replacement restores passive persisted projections.
-Exactly one fixture prompt runs; no recovered work is replayed. Switching engines
-means creating another session, never converting an existing conversation.
-
-`official-client.test.mjs` uses the current published **AHP client 1.0.0**, its
-public WebSocket transport and upstream reducers. It offers upstream's supported
-versions `[1.0.0, 0.9.0]`, negotiates **0.9.0**, streams a completed turn, compares
-the reduced result with an independent viewer, reconnects and restores a lost
-baseline. New 1.0-only features are unqualified. The unchanged vendored schemas
-still validate the negotiated 0.9 baseline; latest upstream main is recorded
-separately instead of silently replacing the host's negotiated contract.
-
-```sh
-OFFICIAL_AHP_PACKAGE=/owned/consumer/node_modules/@microsoft/agent-host-protocol \
-UNIFIED_HOST_MODULE=/owned/consumer/node_modules/@amplifier/unified-host/dist/index.js \
-UNIFIED_HOST_COMMAND='["/owned/consumer/node_modules/.bin/amplifier-unified-host"]' \
-  npm test
-```
-
-The [vendor matrix](evidence/2026-10-03/qualification.json) uses public npm stable
-artifacts, not the configured mirror's older previews:
-
-| Adapter | Package | Independent ACP + host creation | Fresh host account turn |
-| --- | --- | --- | --- |
-| Codex | `@agentclientprotocol/codex-acp` 2.1.1 | Passed with isolated copied login | Passed: discovered `gpt-6-luna`, exact unique token, zero tools |
-| Claude | `@agentclientprotocol/claude-agent-acp` 0.85.1 | Passed; model controls exposed | Authentication required; unknown receipt retained, no retry |
-| Copilot | `@github/copilot` 1.0.91 | Passed with explicitly supplied credential | Passed: discovered `gpt-5-mini`, exact unique token, zero tools |
-
-Unauthenticated discovery is a separate receipt: Codex requires authentication
-during initialization; Copilot initializes but refuses session creation; Claude
-creates sessions and advertises models but this does not establish inference access.
-The earlier Claude account success does not qualify this newer isolated package.
-Copilot's platform package and Codex's bundled binary dependency versions/file
-hashes are retained in the owner output closure manifest.
-
-### Repeatable vendor runner
-
-`node test/vendor-qualification.mjs /owned/private-config.json /owned/new-receipt.json`
-starts actual published adapters using an independent ACP SDK 1.7.0 client, then
-the installed public host. The config's `adapters` array contains `id`, `package`
-(name/version), absolute `command`, argv `args`, sealed `artifact`, and a unique
-`stateDirectory`. Optional `env`/allowlisted `credentialEnvironment` supply
-explicit account access; config values are never included in receipts. Keep that
-private config out of version control. State roots remain inside each owned home.
-
-For example, a credential-free discovery config is:
-
-```json
-{"adapters":[{
-  "id":"copilot",
-  "package":{"name":"@github/copilot","version":"1.0.91"},
-  "command":"/owned/vendors/node_modules/.bin/copilot",
-  "args":["--acp","--stdio"],
-  "artifact":"/owned/github-copilot-1.0.91.tgz",
-  "stateDirectory":"/owned/new-copilot-probe"
-}]}
-```
-
-No prompt runs by default. An explicitly supplied `prompt` (at most 500 characters)
-enables one new host turn. Optional `model` is `{configId,value}` and must be
-present in **that new session's** advertised schema. `expectedText` checks the
-exact bounded response. A model catalog is not an entitlement check; OpenAI's
-[app-server documentation](https://developers.openai.com/siwc/token-sharing-open-source/codex-app-server)
-also distinguishes model discovery from successful inference.
-
-Before dispatch, the runner persists an unknown receipt. It never retries, rejects
-receipt overwrites/reused state, refuses direct-client filesystem/terminal effects,
-and approves no host tool permission. Inspect `qualified`, terminal state and the
-original host receipt: runner exit status alone is not a vendor pass. Preserve
-unknown state for inspection and remove copied credentials separately afterward.
-This is not a live-account authentication manager or a history migration tool.
-
-Upstream adapter entry points: [Codex ACP](https://github.com/agentclientprotocol/codex-acp),
-[Claude ACP](https://github.com/agentclientprotocol/claude-agent-acp), and
-[Copilot ACP](https://docs.github.com/en/copilot/reference/copilot-cli-reference/acp-server).
-No private host imports, browser latency, physical-device acceptance or live
-Spark adoption are claimed. Public contract delta: none.
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
+Any use of third-party trademarks or logos are subject to those third-party's policies.
