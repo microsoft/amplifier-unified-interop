@@ -1,18 +1,18 @@
 {
   "citations": [
     {
-      "git_blob": "946b777f944ca32348f9808b1a2254ce8ea3dd68",
+      "git_blob": "adccd3a9fbea01f13a489fd2286bf05f5733b418",
       "path": "README.md",
-      "ref": "78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec",
-      "sha256": "37bc2a749782367042f476615606b51c1364bdee35a5f0b97c9e66e9250eda7f",
-      "url": "https://github.com/microsoft/amplifier-unified-interop/blob/78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec/README.md"
+      "ref": "8ce7480764b363d4df15d8022d2fcfded249d0ad",
+      "sha256": "269a8fdd7f6eba99d5f177013b7af18a96314c16c23027a578cc64ae202d7fa9",
+      "url": "https://github.com/microsoft/amplifier-unified-interop/blob/8ce7480764b363d4df15d8022d2fcfded249d0ad/README.md"
     },
     {
       "git_blob": "a78375dbca2fac953a68f6a55a8580d389d5070c",
       "path": "CONTRACT.v1.md",
-      "ref": "78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec",
+      "ref": "8ce7480764b363d4df15d8022d2fcfded249d0ad",
       "sha256": "c7710880041bc9319ddf3aa95c18c2cebb5399452b097c7be72eb8937fc36d0f",
-      "url": "https://github.com/microsoft/amplifier-unified-interop/blob/78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec/CONTRACT.v1.md"
+      "url": "https://github.com/microsoft/amplifier-unified-interop/blob/8ce7480764b363d4df15d8022d2fcfded249d0ad/CONTRACT.v1.md"
     }
   ],
   "consumer_cta": {
@@ -88,7 +88,7 @@
     "Do not draw the fixture suite as a production runtime dependency."
   ],
   "purpose": "Check public integration boundaries with independent peers and deterministic fixtures.",
-  "ref": "78ecfdd4ab7976f974f0b965a8dc6c49acf7d6ec",
+  "ref": "8ce7480764b363d4df15d8022d2fcfded249d0ad",
   "repository": "microsoft/amplifier-unified-interop",
   "roles": [],
   "scope": "independent conformance harness",
@@ -104,5 +104,5 @@
     "Connection",
     "Agent Instance"
   ],
-  "visibility": "private"
+  "visibility": "public"
 }
